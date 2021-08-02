@@ -3,6 +3,8 @@ const remote = require('electron').remote;
 /** Create the titlebar elements */
 const initialize_bar = function initializeTitleBar() {
 
+    document.body.style.zoom = "500%";
+
     /** Make the window application a variable from electron */
     const win = remote.getCurrentWindow();
 
@@ -61,7 +63,7 @@ const initialize_bar = function initializeTitleBar() {
         const button = document.createElement('div');
 
         /** Add the button class */
-        button.classList.add('button');
+        button.classList.add('windows-button');
 
         /** Set the id */
         button.id = id + '-button';

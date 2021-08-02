@@ -1,0 +1,39 @@
+.button {
+    display: flex;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background: var(--darkish);
+    border: 1px solid var(--light);
+    align-items: center;
+    padding: 9px;
+    color: white;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.button:hover {
+    background: var(--light);
+    border: 1px solid var(--teal);
+}
+
+.button:active {
+    background: #222329;
+    border: 1px solid #42434a;
+}
+
+.dark {
+    background: var(--dark);
+    border: 1px solid var(--darked);
+}
+
+html {
+    --lighter: #48495C;
+    --teal: #7F7F90;
+
+    --darkish: #2c2c38;
+    --light: #414255;
+
+    --dark: #262630;
+    --darked: #1F2029;
+}

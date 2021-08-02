@@ -4,7 +4,8 @@
     user-select: none;
     -webkit-app-region: drag;
     background: #222329;
-    position: absolute;
+    z-index: 99 !important;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -12,11 +13,11 @@
     color: white;
 }
   
-#content {
-    height: calc(100% - 32px);
-    margin-top: 32px;
-    padding: 20px;
-    overflow-y: auto;
+.content {
+  height: calc(100% - 100px);
+  margin-top: 32px;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 #window-controls {
@@ -28,7 +29,7 @@
     height: 100%;
   }
   
-  #window-controls .button {
+  #window-controls .windows-button {
     grid-row: 1 / span 1;
     display: flex;
     justify-content: center;
@@ -50,14 +51,14 @@
     -webkit-app-region: no-drag;
   }
   
-  #window-controls .button {
+  #window-controls .windows-button {
     user-select: none;
     transition: 5;
   }
-  #window-controls .button:hover {
+  #window-controls .windows-button:hover {
     background: rgba(255,255,255,0.1);
   }
-  #window-controls .button:active {
+  #window-controls .windows-button:active {
     background: rgba(255,255,255,0.2);
   }
   

@@ -28,4 +28,9 @@ const initialize_window = (options={}) => {
 app.whenReady().then(() => {
   /** Initialize the window */
   initialize_window(browser_options);
+
+  /** Open a window if none are open (macOS) */
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) initialize_window();
+  });
 });

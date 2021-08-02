@@ -1,0 +1,28 @@
+.textbox:active {
+    background: #7289DA;
+}
+
+.textbox:hover {
+    background: var(--light);
+    border: 1px solid var(--teal);
+}
+
+.textbox {
+    resize: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    background: var(--darkish);
+    border: 1px solid var(--light);
+    color: white;
+    font-size: 14px;
+    overflow: hidden;
+    height: 27px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.textbox > div {
+    position: relative;
+    left: 10px;
+}
