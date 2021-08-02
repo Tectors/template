@@ -1,0 +1,16 @@
+{
+    "width": 800,
+    "height": 600,
+    "webPreferences": {
+        "nodeIntegration": true,
+        "nodeIntegrationInWorker": true,
+        "nodeIntegrationInSubFrames": true,
+        "contextIsolation": false, 
+        "enableRemoteModule": true
+    },
+    "frame": false,
+    "contextIsolation": false,
+    "sandboxed": false,
+    "backgroundColor": "#2C2C38",
+    "url": "./src/index.html"
+}

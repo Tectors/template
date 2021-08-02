@@ -1,34 +1,31 @@
-const { app, BrowserWindow } = require('electron')
+/** The main process (electron) */
+const { app, BrowserWindow } = require('electron');
 
+/** Others, that may be useful later on. */
+const path = require('path');
 
-const path = require('path')
-const { sandboxed } = require('process')
+/** Options for the browser window (options.json) */
+const browser_options = require('./options.json');
 
-// modify your existing createWindow() function
-function createWindow () {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-        nodeIntegration: true,
-        nodeIntegrationInWorker: true,
-        nodeIntegrationInSubFrames: true,
-        contextIsolation: false, 
-        enableRemoteModule: true
-    },
-    frame: false,
-    contextIsolation: false,
-    sandboxed: false,
-    backgroundColor: '#FFF'
-  })
+/**
+ * A function to execute when the window is activate
+ * 
+ * @param {Object} options The options for the browser window 
+ * @returns {BrowserWindow}
+ */
+const initialize_window = (options={}) => {
+  /** Make a new browser window */
+  const window = new BrowserWindow(options);
 
-  win.loadFile('index.html')
+  /** Load a file into the window */
+  window.loadFile(options.url);
+
+  /** Return the window. */
+  return window;
 }
 
+/** When the app is ready, then launch up the browser window. */
 app.whenReady().then(() => {
-    createWindow()
-  
-    app.on('activate', function () {
-      if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    })
-  })
+  /** Initialize the window */
+  initialize_window(browser_options);
+});

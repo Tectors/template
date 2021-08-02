@@ -52,6 +52,7 @@
   
   #window-controls .button {
     user-select: none;
+    transition: 5;
   }
   #window-controls .button:hover {
     background: rgba(255,255,255,0.1);
